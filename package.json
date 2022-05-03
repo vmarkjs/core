@@ -1,0 +1,69 @@
+{
+  "name": "@vmark/core",
+  "version": "0.1.0",
+  "author": "Yu Yin <yxonic@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vmarkjs/core.git"
+  },
+  "type": "module",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,vue}\"",
+    "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx,.vue src",
+    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 jest",
+    "build": "parcel build",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "dependencies": {
+    "hast-to-hyperscript": "^10.0.1",
+    "rehype-raw": "^6.1.1",
+    "rehype-sanitize": "^5.0.1",
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "unified": "^10.1.2"
+  },
+  "devDependencies": {
+    "@parcel/core": "^2.5.0",
+    "@parcel/packager-ts": "^2.5.0",
+    "@parcel/transformer-typescript-types": "^2.5.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@swc/core": "^1.2.174",
+    "@swc/jest": "^0.2.20",
+    "@types/jest": "^27.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^28.0.3",
+    "lint-staged": "^12.4.1",
+    "parcel": "^2.5.0",
+    "prettier": "^2.6.2",
+    "semantic-release": "^19.0.2",
+    "typescript": "^4.6.4"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx,vue}": [
+      "eslint --fix --max-warnings=0"
+    ]
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
