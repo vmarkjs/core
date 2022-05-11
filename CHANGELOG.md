@@ -1,3 +1,10 @@
+# 1.0.0 (2022-05-11)
+
+
+### Bug Fixes
+
+* only publish dist files ([382ece3](https://github.com/vmarkjs/core/commit/382ece3c438b1a172c11736cd5002dfa43c15827))
+
 ## [1.0.2](https://github.com/vmarkjs/core/compare/v1.0.1...v1.0.2) (2022-05-03)
 
 
